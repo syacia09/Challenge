@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            background-image: linear-gradient(lightskyblue, lightsalmon);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            font-size: 80pt;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+</body>
+<script>
+    let date = new Date()
+    let h1 = document.querySelector("h1")
+    // console.log(date.getDay(), date.getMonth(), date.getDate())
+    if (date.getDate() === 4 && date.getMonth() === 2)
+        h1.innerHTML = "YES"
+    else
+        h1.innerHTML = "NO"
+</script>
+</html>
