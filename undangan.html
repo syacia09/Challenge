@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: bold;
+        }
+        div.container {
+            min-width: 300px;
+            max-width: 500px;
+            margin: 0px auto;
+        }
+        section.page {
+            width: 100%;
+            min-height: 100vh;
+            /* background-color: salmon; */
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        section.page > div > p, section.page > div > h1 {
+            text-align: center;
+        }
+        section.page.one {
+            gap: 300pt;
+            background-image: url(assets/Left\ hand-edit.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+        }
+        section.page.one > div > h1 {
+            font-size: 50pt;
+            font-family: 'Dancing Script', cursive;
+        }
+        /* section.page.one p {
+            font-size: 20pt;
+        } */
+        section.page.two {
+            justify-content: space-evenly;
+            background-image: url(assets/Left\ Hand\ \(1\).jpg);
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        section.page.two div.nama h1 {
+            font-size: 40pt;
+            font-family: 'Dancing Script', cursive;
+            /* color: white; */
+        }
+        section.page.two h1 {
+            font-size: 25pt;
+            font-family: 'Dancing Script', cursive;
+        }
+        section.page.three {
+            justify-content: space-evenly;
+            background-image: url(assets/download\ \(25\).jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        section.page.three h1 {
+            font-size: 25pt;
+            font-family: 'Dancing Script', cursive;
+        }
+        section.page.four {
+            /* justify-content: center; */
+            background-image: url(assets/download\ \(26\).jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            /* padding: 90px; */
+            color: white;
+        }
+        section.page.four > h1{
+            /* margin-top: 70px; */
+            margin-bottom: 90px;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            font-size: 25pt;
+        }
+        section.page.four > div.lokasi {
+            margin-top: 100px;
+            font-size: 15pt;
+        }
+        div.card {
+            padding: 10pt;
+            width: 250pt;
+            min-height: 300pt;
+            background-color: lightblue;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 2px dashed black;
+            margin: 30px;
+        }
+        div.card2 {
+            padding: 10pt;
+            width: 250pt;
+            min-height: 300pt;
+            background-color: lightblue;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 2px dashed black;
+            margin: 30px;
+        }
+        div.circle {
+            width: 150pt;
+            height: 150pt;
+            border-radius: 50pt;
+            /* background-color: greenyellow; */
+            background-image: url(assets/Hansel\ Ganesha.jpg);
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 30px;
+        }
+        div.circle2 {
+            width: 150pt;
+            height: 150pt;
+            border-radius: 50pt;
+            /* background-color: greenyellow; */
+            background-image: url(assets/Grace\ Isabella.jpg);
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 30px;
+        }
+        div.line {
+            width: 200px;
+            height: 1px;
+            background-color: black;
+            margin: 10px auto;
+        }
+        div.title {
+            /* color: ; */
+            color: rgb(16, 97, 163);
+        }
+        div.guest-name {
+            color: rgb(16, 97, 163);
+        }
+        #box {
+            width: 200px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: rgb(16, 97, 163);
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            font-size: 20px;
+            line-height: 100px;
+            text-align: center;
+        }
+        #text {
+            font-size: 25px;
+            margin-top: 10px;
+            text-align: center;
+            color: rgb(16, 97, 163);
+        }
+        div.kotak {
+            display: flex;
+            justify-content: center ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="page one">
+            <div class="title">
+                <p>The Wedding of</p>
+                <h1>Hansel & Grace</h1>
+                <p>Minggu, 17 September 2023</p>
+            </div>
+            <!-- <div class="guest-name">
+                <p>Kepada Yth.</p>
+                <p>Chris Lavtansia</p>
+            </div> -->
+            <div class="kotak">
+                <div id="box" onclick="toggleBox()">Buka Undangan</div>
+                <div id="text" style="display: none;">
+                    <p>Kepada Yth.</p>
+                    <p>Chris Lavtansia</p>
+                </div>
+            </div>
+            
+        </section>
+        <section class="page two">
+            <div class="nama">
+                <h2>The Beloved</h2>
+                <h1>Hansel & Grace</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident aliquid odit repellendus optio aspernatur reprehenderit est tempora dignissimos repudiandae eos.</p>
+            <div class="card">
+                <div class="circle"></div>
+                <h1>Hansel Ganesha</h1>
+                <div class="line"></div>
+                <p>Putra Pertama</p>
+                <p>Bapak Syamsudin</p>
+                <p>&</p>
+                <p>Ibu Sumiati</p>
+            </div>
+        </section>
+        <section class="page three">
+            <div class="card2">
+                <div class="circle2"></div>
+                <h1>Grace Isabella</h1>
+                <div class="line"></div>
+                <p>Putri Pertama</p>
+                <p>Bapak Kim Eun Hyeok</p>
+                <p>&</p>
+                <p>Ibu Lee Lily</p>
+            </div>
+        </section>
+        <section class="page four">
+            <div class="lokasi">
+                <p>Lokasi Acara : Hotel Laszkarnien, Sienna</p>
+                <p>Tanggal Acara : Sabtu, 17 September 2023</p>
+            </div>
+            <h1>We're Looking Forward for Your Attendance</h1>
+        </section>
+    </div>
+</body>
+<script>
+    function toggleBox() {
+        var box = document.getElementById('box');
+        var text = document.getElementById('text');
+
+        if (box.style.display === 'block') {
+            box.style.display = 'none';
+            text.style.display = 'block';
+        } else {
+            box.style.display = 'none';
+            text.style.display = 'block';
+        }
+    }
+</script>
+</html>
