@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #2980b9;
+        margin: 20px;
+      }
+      .container {
+        width: 100%;
+      }
+      .box {
+        max-width: 350px;
+        padding: 10px;
+        border: 3px solid chocolate;
+        margin: 10px auto;
+        border-radius: 8px;
+      }
+      .box img {
+        max-width: 300px;
+        height: 300px;
+        display: block;
+        object-fit: contain;
+        padding: 5px;
+      }
+      .box .heading,
+      .box .text {
+        width: 100%;
+        padding: 0 5px;
+        min-width: 300px;
+      }
+      h2,
+      h4 {
+        text-transform: uppercase;
+      }
+      p {
+        margin: 10px 0;
+      }
+      a {
+        display: inline-block;
+        background: #2980b9;
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+      }
+      @media (min-width: 700px) {
+        .container {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        .box {
+          max-width: 700px;
+        }
+        .box img {
+          float: left;
+        }
+        .box .heading,
+        .box .text {
+          float: right;
+          width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>New Movies Review</h1>
+    <div class="container">
+      <div class="box">
+        <div class="heading">
+          <h2>Everything Everywhere All At Once</h2>
+          <h4>⭐7,8/10</h4>
+        </div>
+        <img src="assets/Everything-Everywhere-All-at-Once_LandscapePoster.jpg" alt="" />
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
+            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Barbie</h2>
+          <h4>⭐7/10</h4>
+        </div>
+        <img src="assets/barbie.jpg" alt="" />
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
+            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Oppenheimer</h2>
+          <h4>⭐8,5/10</h4>
+        </div>
+        <img src="assets/oppenheimer.webp" alt="" />
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
+            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Spider-Man Across The Spider-Verse</h2>
+          <h4>⭐8,5/10</h4>
+        </div>
+        <img src="assets/spiderman.webp" alt="" />
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
+            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Super Mario Bros Movie</h2>
+          <h4>⭐7,5/10</h4>
+        </div>
+        <img src="assets/supermariobros.png" alt="" />
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
+            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
