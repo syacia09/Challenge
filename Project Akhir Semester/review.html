@@ -3,13 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous" />
+
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <title>Document</title>
+
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+      :root {
+        --main-bg-color: #fafafa;
+        --main-text-color: black;
+      }
+      [data-theme="dark"] {
+        --main-bg-color: #151d2a;
+        --main-text-color: #fafafa;
+      }
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+      body {
+        background-color: var(--main-bg-color);
+        font-family: "Poppins";
+      }
+      header {
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+      nav {
+        margin-top: 100px;
+      }
+      /*logo*/
+      .logo {
+        height: 80px;
+        width: 80px;
+        background-image: url(assets/moon.png);
+        background-size: cover;
+        /* background-color: blue; */
+      }
+
+      /*menu*/
+      .menu {
+        height: 100%;
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: aqua; */
+      }
+      .menu a {
+        text-decoration: none;
+        font-size: 20px;
+      }
+      .menu a:hover {
+        text-decoration: underline;
+        color: pink;
+        transition: .1s ease-in;
+      }
+      .toggle {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 120px;
+        height: 60px;
+        border-radius: 50px;
+        transition: 0.2s;
+      }
+      .toggle i {
+        width: 50%;
+        line-height: 60px;
+        text-align: center;
+        font-size: 30px;
+        z-index: 1;
+      }
+      .toggle .ball {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        margin: 7.5px;
+        border-radius: 50%;
+        transition: 0.3s ease-out;
+      }
+      .light input {
+        display: none;
+      }
+      /* light mode */
+      .light {
+        background: #fafafa;
+      }
+      .light .toggle {
+        background: linear-gradient(145deg, #e1e1e1, #fff);
+        box-shadow: 3px 3px 4px #e6e6e6, -3px -3px 4px #ffffff;
+      }
+      .light .toggle .bxs-sun {
+        color: #fafafa;
+      }
+      .light .toggle .bx-moon {
+        color: #151d2a;
+      }
+      .light .toggle .ball {
+        background: #151d2a;
+      }
+
+      /* dark mode  */
+      .dark {
+        background: #151d2a;
+      }
+      .dark .toggle {
+        background: #151d2a;
+        box-shadow: 3px 3px 4px #0e131b, -3px -3px 4px #1c2739;
+      }
+      .dark .toggle .bx-sun {
+        color: #fafafa;
+      }
+      .dark .toggle .bxs-moon {
+        color: #151d2a;
+      }
+      .dark .toggle .ball {
+        background: #fafafa;
+        transform: translateX(60px);
+      }
+
+      /*login*/
+      .login {
+        height: 50px;
+        width: 250px;
+        border-radius: 50px;
+        background-color: #2980b9;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .login a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .login a:hover {
+        color: #1e1f26;
+      }
+      .login span {
+        height: 70%;
+        width: 1px;
+        background-color: black;
+      }
+      
       h1 {
         text-align: center;
         text-transform: uppercase;
@@ -22,9 +175,13 @@
       .box {
         max-width: 350px;
         padding: 10px;
-        border: 3px solid chocolate;
-        margin: 10px auto;
+        background-color: #fafafa;
+        /* margin: 10px auto;
+        border-radius: 8px; */
         border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        margin: 20px;
       }
       .box img {
         max-width: 300px;
@@ -39,14 +196,14 @@
         padding: 0 5px;
         min-width: 300px;
       }
-      h2,
+      .box h2,
       h4 {
         text-transform: uppercase;
       }
-      p {
+      .box p {
         margin: 10px 0;
       }
-      a {
+      .box a {
         display: inline-block;
         background: #2980b9;
         color: white;
@@ -75,8 +232,35 @@
       }
     </style>
   </head>
-  <body>
-    <h1>New Movies Review</h1>
+  <body class="light">
+    <header>
+      <div class="logo">
+      </div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Watch-List</a>
+        <a href="review.html">Review</a>
+      </div>
+      <div class="mode">
+        <input type="checkbox" id="toggle" />
+        <label class="toggle" for="toggle">
+          <i class="bx bxs-sun"></i>
+          <i class="bx bx-moon"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+      <div class="login">
+        <a href="index2.html">Login</a>
+        <span></span>
+        <a href="index3.html">Sign Up</a>
+      </div>
+    </header>
+    <nav>
+      <div class="name">
+        <h1>New Movies Review</h1>
+      </div>
+      
     <div class="container">
       <div class="box">
         <div class="heading">
@@ -86,8 +270,8 @@
         <img src="assets/Everything-Everywhere-All-at-Once_LandscapePoster.jpg" alt="" />
         <div class="text">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
-            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+            Everything Everywhere All At Once adalah petualangan yang penuh aksi, sci-fi yang lucu dan berjiwa besar tentang seorang wanita Cina-Amerika, Seorang imigran Tiongkok terbawa dalam petualangan luar biasa, di mana dia sendiri
+            yang dapat menyelamatkan dunia dengan menjelajahi alam semesta lain yang terhubung dengan kehidupan yang bisa dia jalani.
           </p>
           <a href="#">Read More</a>
         </div>
@@ -99,10 +283,7 @@
         </div>
         <img src="assets/barbie.jpg" alt="" />
         <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
-            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
-          </p>
+          <p>Berkisah tentang kehidupan para Barbie yang memiliki karakter berbeda-beda. Semua perempuan dipanggil Barbie dan laki-laki dipanggil Ken, tetapi mereka dapat saling mengenal.</p>
           <a href="#">Read More</a>
         </div>
       </div>
@@ -114,10 +295,12 @@
         <img src="assets/oppenheimer.webp" alt="" />
         <div class="text">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
-            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+            J. Robert Oppenheimer merupakan fisikawan di balik pembuatan senjata nuklir pertama dalam Proyek Manhattan pada era Perang Dunia II.Sebelum menjadi fisikawan yang memimpin proyek itu, Oppenheimer merupakan mahasiswa Universitas
+            Cambridge yang kemudian pindah ke Gottingen hingga mendapatkan gelar profesor. Oppenheimer kemudian meneruskan kariernya sebagai dosen. Di sisi lain, ia mulai mendukung gerakan-gerakan reformasi hingga dicap sebagai salah satu
+            anggota partai komunis meskipun ia terus membantah tuduhan itu. Franklin D. Roosevelt yang pada 1939 sedang menjabat sebagai presiden Amerika Serikat khawatir dengen Jerman, yang berada di bawah kepemimpinan Adolf Hitler, sedang
+            mengerjakan senjata nuklir.
           </p>
-          <a href="#">Read More</a>
+          <a href="https://www.cnnindonesia.com/hiburan/20230720095549-220-975569/sinopsis-oppenheimer-lika-liku-kisah-kehidupan-bapak-bom-atom">Read More</a>
         </div>
       </div>
       <div class="box">
@@ -128,8 +311,9 @@
         <img src="assets/spiderman.webp" alt="" />
         <div class="text">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
-            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+            Miles Morales hadir kembali dalam babak baru saga Spider-Verse. Usai berjumpa lagi dengan Gwen Stacy, Spider-Man si tetangga yang ramah asal Brooklyn ini terlontar melintasi Multiverse yang membawanya pada Spider Society,
+            kelompok pahlawan manusia laba-laba yang bertugas melindungi kelangsungan Multiverse. Namun, saat para pahlawan ini berselisih tentang cara melawan sebuah ancaman besar, Miles pun harus beradu dengan para manusia laba-laba yang
+            lain dan menetapkan langkahnya sendiri demi menyelamatkan orang-orang yang ia cintai. Siapa pun bisa memakai topeng itunamun seorang pahlawan adalah ia yang tahu benar cara memakainya.
           </p>
           <a href="#">Read More</a>
         </div>
@@ -142,12 +326,28 @@
         <img src="assets/supermariobros.png" alt="" />
         <div class="text">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis libero nisi rerum soluta, dolorem dicta necessitatibus sit veniam ratione ducimus reiciendis doloribus unde, animi consequatur eum quasi commodi natus
-            suscipit. Deleniti cum unde consequatur, similique perspiciatis reiciendis, consequuntur, provident sed assumenda neque dolores? Beatae cum repudiandae accusantium quaerat ducimus.
+            Kisah Mario (Chris Pratt) si tukang ledeng yang melakukan perjalanan heroik untuk menyelamatkan saudaranya, Luigi (Charlie Day). Di perjalanan, Mario tidak sendiri, ia dibantu oleh Putri Peach (Anya Taylor-Joy) dan prajurit
+            kerajaan jamur.
           </p>
           <a href="#">Read More</a>
         </div>
       </div>
     </div>
+    </nav>
+    
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+<script>
+  const body = document.querySelector("body");
+  const toggle = document.querySelector("#toggle");
+  const sunIcon = document.querySelector(".toggle .bxs-sun");
+  const moonIcon = document.querySelector(".toggle .bx-moon");
+
+  toggle.addEventListener("change", () => {
+    body.classList.toggle("dark");
+    sunIcon.className = sunIcon.className == "bx bxs-sun" ? "bx bx-sun" : "bx bxs-sun";
+    moonIcon.className = moonIcon.className == "bx bxs-moon" ? "bx bx-moon" : "bx bxs-moon";
+  });
+</script>
 </html>
